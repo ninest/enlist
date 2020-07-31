@@ -1,6 +1,7 @@
 import datetime
 from enlist.get import get
 
-event_list = get(in_json=True)
+event_list = get()
 
-print(event_list)
+for e in event_list:
+  print(e)
