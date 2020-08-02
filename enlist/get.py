@@ -7,18 +7,26 @@ from .values import CURRENT_YEAR
 
 
 def get(in_json=False):
-  with open('./enlist/data/2020-dates.json') as f:
+  # messy is from CMPPB
+  with open('./enlist/data/messy-2020-dates.json') as f:
     data = json.load(f)
 
   event_list = []
   for event_dict in data["calendarEventList"][1:]:
     event = Event.from_json(event_dict)
+    event_list.append(event)
 
-    now = datetime.now()
-    if event.start.date() > now.date():
-      # only add to list if after today
-      event_list.append(event.to_json() if in_json else event)
+  # sort by date
+  event_list = sorted(
+    event_list,
+    key=lambda x: x.start.date()
+  )
 
-
+  # convert everything to json
+  json_event_list = []
+  if in_json:
+    for event in event_list:
+      json_event_list.append(event.to_json())
+    return json_event_list
 
   return event_list
