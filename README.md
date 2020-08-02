@@ -38,6 +38,9 @@ The endpoint [ns-enlist.vercel.app/api](https://ns-enlist.vercel.app/api) return
 }
 ```
 
+## 📁 JSON file
+If you do not want to rely on the API, you can download `2020-dates.json`. It is used in [ninest/NSR](https://github.com/ninest/nsr) for the [Dates page](https://nsr.now.sh/dates).
+
 ## 📜 Licence
 MIT
 
