@@ -8,7 +8,7 @@ from .values import CURRENT_YEAR
 
 def get(in_json=False):
   # messy is from CMPPB
-  with open('./enlist/data/messy-2020-dates.json') as f:
+  with open(f'./enlist/data/messy-{CURRENT_YEAR}-dates.json') as f:
     data = json.load(f)
 
   event_list = []

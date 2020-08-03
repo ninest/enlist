@@ -1,6 +1,8 @@
 # Enlist
 > An API to get enlistment dates and public holidays
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ninest/enlist/PyTest?style=flat-square)
+
 ## 🤔 Usage
 
 The endpoint [ns-enlist.vercel.app/api](https://ns-enlist.vercel.app/api) returns the current year and a list of events (Public holidays or BMT enlistments) that are not yet over.
